@@ -7,9 +7,9 @@ function Home() {
     const url = "https://api.jsonbin.io/v3/b/64254cc2ace6f33a22007d35";
 
     let dogsLocal = JSON.parse(localStorage.getItem("dogs"));
-    console.log(dogsLocal)
+    console.log(dogsLocal.length)
 
-    if (dogsLocal == null) {
+    if (dogsLocal.length == 0) {
 
         useEffect(() => {
             const fetchDogData = async () => {
@@ -24,19 +24,20 @@ function Home() {
                     setDogs(data.record);
 
                     console.log(dogs);
-
-                    localStorage.setItem('dogs', JSON.stringify(dogs));
                 } catch (error) {
                     console.error(error);
                 }
             }
             fetchDogData();
+            localStorage.setItem('dogs', JSON.stringify(dogs));
         }, [])
 
-        dogsLocal = JSON.parse(localStorage.getItem("dogs"));
+
+        dogsLocal = dogs
         console.log(dogsLocal)
     }
-
+    dogsLocal = JSON.parse(localStorage.getItem("dogs"));
+    console.log(dogsLocal)
 
     return (
         <>
