@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react'
 import { Link, useParams } from 'react-router-dom'
+import './components.css';
 
 function SingleDog() {
+
     const { index } = useParams();
 
     let dogsLocal = JSON.parse(localStorage.getItem("dogs"));

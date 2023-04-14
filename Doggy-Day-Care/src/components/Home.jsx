@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom';
-
+import './components.css';
 
 function Home() {
     const [dogs, setDogs] = useState([]);
@@ -41,10 +41,10 @@ function Home() {
 
     return (
         <>
-            <section className="home-section">
+            <section className="home-sec">
                 <div className="home-div1">
                     <h1 className="home-title ">
-                        The Dog Daycare App
+                        Doggy Daycare Center
                     </h1>
                     <p className="home-p">
                         {dogsLocal.length} dogs registered. This appication is powered by {""}
@@ -68,7 +68,7 @@ function Home() {
                             key={dog.chipNumber}
                             className="home-link"
                         >
-                            <article  >
+                            <article >
                                 <img
                                     src={dog.img}
                                     alt={dog.name}
